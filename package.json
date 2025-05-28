@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "self study backend",
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "homepage": "https://github.com/trandat9029/self-study-backend#readme",
+  "bugs": {
+    "url": "https://github.com/trandat9029/self-study-backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trandat9029/self-study-backend.git"
+  },
+  "license": "ISC",
+  "author": "trandat",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

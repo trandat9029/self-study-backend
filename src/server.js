@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/abc', (req, res) => {
-    res.send('check abc');
+    res.send('check nodemon');
 })
 app.get('/test', (req, res) => {
     res.render('sample.ejs' )

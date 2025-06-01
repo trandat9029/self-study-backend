@@ -27,9 +27,34 @@ const getTest = (req, res) =>{
     res.render('sample.ejs' )
 }
 
+const portCreateUser = (req, res) =>{
+    
+    let email = req.body.email;
+    let name = req.body.myname;
+    let city = req.body.city;
+    
+    // let { email, name, city} = req.body:
+
+    console.log('email:', email, 'name:', name, 'city:', city);
+
+    connection.query(
+        ` INSERT INTO Users (email, name, city)
+            VALUES (?, ?, ?)`,
+        [email, name, city],
+        function(err, results){
+            if(err){
+                console.log('error: ', err);
+                return res.status(500).send('co loi xay ra khi insert');
+            }
+            console.log('results: ', results);
+            res.send('create user succeed!');
+        }
+    )
+}
+
 module.exports = {
     getHomepage,
     getABC,
-    getTest
-
+    getTest,
+    portCreateUser,
 }

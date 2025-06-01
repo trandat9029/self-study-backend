@@ -14,10 +14,9 @@ const hostname  = process.env.HOST_NAME || 'localhost';
 //config template engine
 configViewEngine(app);
 
-// test sql connection
-
-
-//simple query
+//config request body
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
 
 
 

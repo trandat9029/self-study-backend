@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Create a user</title>
+</head>
+
+
+<body>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a class="active" href="/create">Create-user</a></li>
+
+    </ul>
+
+    <form action="/create-user" method="post" class="form-add-new">
+        <fieldset>
+            <legend>Form add new users</legend>
+            <div class="input-group">
+                <label for="">Email: </label>
+                <input type="text" name="email" >
+            </div>
+            <div class="input-group">
+                <label for="">Name: </label>
+                <input type="text" name="myname" >
+            </div>
+            <div class="input-group">
+                <label for="">City: </label>
+                <input type="text" name='city' >
+            </div>
+            <div>
+                <button class="btn">Save</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

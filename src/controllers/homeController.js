@@ -27,7 +27,7 @@ const getTest = (req, res) =>{
     res.render('sample.ejs' )
 }
 
-const portCreateUser = (req, res) =>{
+const portCreateUser = async (req, res) =>{
     
     let email = req.body.email;
     let name = req.body.myname;
@@ -37,24 +37,35 @@ const portCreateUser = (req, res) =>{
 
     console.log('email:', email, 'name:', name, 'city:', city);
 
-    connection.query(
-        ` INSERT INTO Users (email, name, city)
-            VALUES (?, ?, ?)`,
-        [email, name, city],
-        function(err, results){
-            if(err){
-                console.log('error: ', err);
-                return res.status(500).send('co loi xay ra khi insert');
-            }
-            console.log('results: ', results);
-            res.send('create user succeed!');
-        }
-    )
+    // connection.query(
+    //     ` INSERT INTO Users (email, name, city)
+    //         VALUES (?, ?, ?)`,
+    //     [email, name, city],
+    //     function(err, results){
+    //         if(err){
+    //             console.log('error: ', err);
+    //             return res.status(500).send('co loi xay ra khi insert');
+    //         }
+    //         console.log('results: ', results);
+    //         res.send('create user succeed!');
+    //     }
+    // );
+
+    let [results, fields] = await connection.query(
+        ` INSERT INTO Users (email, name, city) VALUES (?, ?, ?)`, [email, name, city],
+    );;
+    console.log('>>> check results: ', results);
+
+}
+
+const getCreateUser = (req, res) =>{
+    res.render('create.ejs');
 }
 
 module.exports = {
     getHomepage,
     getABC,
     getTest,
+    getCreateUser,
     portCreateUser,
 }

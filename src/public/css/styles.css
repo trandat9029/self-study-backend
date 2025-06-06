@@ -48,3 +48,6 @@ li .active{
     margin: 10px;
 }
 
+.d-none{
+  display: none;
+}
